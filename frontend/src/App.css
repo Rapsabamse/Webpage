@@ -1,0 +1,108 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.headerDiv {
+  position: relative;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.colorCard {
+  width: 100%;
+  padding-top: 50%; /* Maintains a 2:1 aspect ratio */
+  border-radius: 6px;
+
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  position: relative;
+}
+
+/* Buttons that are on the cards */
+.cardBtn {
+  position: absolute;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+
+  cursor: pointer;
+
+  border: 0px;
+  background-color: rgba(255,255,255,0.4);
+} .cardBtn:hover {
+  background-color: rgba(255,255,255,0.8);
+}
+
+#refreshBtn {
+  top: 3px;
+  right: 3px;
+} #copyBtn {
+  bottom: 3px;
+  right: 3px;
+} #deleteBtn {
+  top: 3px;
+  left: 3px;
+} #changeColorBtn {
+  bottom: 3px;
+  left: 3px;
+}
+
+/* The color picker */
+.colorPicker {
+  width: inherit;
+  z-index: 1; 
+  position: absolute;
+}
+
+/* Button to add another rectangle */
+.addRectangle {
+  background-color: inherit;
+  border: 0px;
+  width: 100%;
+  padding-top: calc(25% - 2vw); /* Maintains a 2:1 aspect ratio */
+  padding-bottom: (25% - 2vw);
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center; /* Center horizontally */
+} .addItemBtn {
+  aspect-ratio: 1 / 1;
+  height: 3vw;
+
+  
+  background-color: inherit;
+  border: 2px solid #424242;
+  border-radius: 50%;
+  
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;    /* Center vertically */
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}/* Hover effect */
+.addItemBtn:hover {
+  border: 2px solid #000000;
+}
+
+.loginBtn {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  display: flex;
+
+  font-size: 3.2em; /* Adjust the size as needed */
+
+  border: 0px;
+  background-color: inherit;
+}
