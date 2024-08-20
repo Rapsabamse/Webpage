@@ -5,7 +5,7 @@ import { faCircleUser as icon } from '@fortawesome/free-solid-svg-icons';
 const LoginButton: React.FC = () => {
   return (
     <button className='loginBtn'>
-        <FontAwesomeIcon icon={icon} />
+        <FontAwesomeIcon icon={icon} id='loginIcn'/>
     </button>
   );
 };

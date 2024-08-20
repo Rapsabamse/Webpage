@@ -3,11 +3,85 @@
   height: 100vh;
   margin: 0 auto;
   text-align: center;
+  background-color: #f1f1f1;
 }
 
 .headerDiv {
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem; /* Responsive padding */
+  background-color: #1f2833;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}.headerDiv h1 {
+  margin: 0;
+  font-size: 3.2rem;
+  font-weight: bold;
+  text-align: center;
+  flex: 1; /* Allow h1 to grow and take available space */
+  color: #ffffff;
+} 
+.headerBtns {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+  justify-content: right;
+} 
+.spacer {
+  flex: 1; /* Takes up space to push the h1 to center */
+} 
+
+
+/* General button styles */
+.headerBtns button {
+  border: none;
+  cursor: pointer;
+  font-size: 2em;
+  transition: .5s;
 }
+
+/* Specific styles for login and upload buttons */
+.loginBtn, .uploadBtn {
+  display: inline-flex; /* Ensures it sizes correctly around the icon */
+  align-items: center;
+  justify-content: center;
+  width: 1.5em; /* Adjust size as needed */
+  height: 1.5em; /* Ensure the height matches the width for a perfect circle */
+  background-color: #262626;
+  border-radius: 50%;
+  font-size: 2em; /* Adjust icon size as needed */
+}
+
+/* Icon colors */
+#uploadIcn {
+  color: #666;
+  transition: 0.5s;
+} #loginIcn {
+  background-color: #666;
+  border-radius: 50%;
+  color: #262626;
+  font-size: 1.5em;
+  transition: 0.5s;
+}
+
+/* Glowing effect on hover */
+.loginBtn:hover, .uploadBtn:hover {
+  box-shadow: 0 0 10px 4px #66fcf1; /* Adjust values as needed */
+  color: #66fcf1;
+}
+
+/* Change icon color when parent button is hovered */
+.uploadBtn:hover #uploadIcn {
+  color: #66fcf1;
+}
+
+
+#loginIcn:hover {
+  background-color: #66fcf1;
+}
+
 
 .grid-container {
   display: grid;
@@ -16,6 +90,7 @@
   width: 90%;
   max-width: 1200px;
   margin: auto;
+  padding-top: 1em;
 }
 
 .colorCard {
@@ -90,19 +165,10 @@
   justify-content: center; /* Center horizontally */
   align-items: center;    /* Center vertically */
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  
+  transition: .5s;
 }/* Hover effect */
 .addItemBtn:hover {
-  border: 2px solid #000000;
-}
-
-.loginBtn {
-  position: absolute;
-  top: 10%;
-  right: 0;
-  display: flex;
-
-  font-size: 3.2em; /* Adjust the size as needed */
-
-  border: 0px;
-  background-color: inherit;
+  box-shadow: 0 0 1px 1px #121212; /* Adjust values as needed */
 }

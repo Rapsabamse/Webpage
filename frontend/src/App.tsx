@@ -38,35 +38,36 @@ function App() {
   return (
     <>
       <div className='headerDiv'>
+        <div className="spacer"></div>
         <h1>Color picker</h1>
-        <p>Pick a color that you like!</p>
-        <LoginButton />
-        <div onClick={() => uploadCardData(cards)}><UploadButton /></div>
+        <div className='headerBtns'>
+          <LoginButton />
+          <div onClick={() => uploadCardData(cards)}><UploadButton /></div>
+        </div>
       </div>
 
       <div>
         <div className="grid-container">
-          
-        {cards.map(({ id, color }) => (
-          <div
-            key={id}
-            style={{ backgroundColor: color }}
-            className="colorCard">
+          {cards.map(({ id, color }) => (
+            <div
+              key={id}
+              style={{ backgroundColor: color }}
+              className="colorCard">
 
-            <div onClick={() => copyColor(id)}><CopyButton /></div>
-            <div onClick={() => refreshColor(id)}><RefreshButton /></div>
-            <div onClick={() => deleteRectangle(id)}><DeleteButton /></div>
-            <div onClick={() => showColorPicker(id)}><ChangeColorButton /></div>
+              <div onClick={() => copyColor(id)}><CopyButton /></div>
+              <div onClick={() => refreshColor(id)}><RefreshButton /></div>
+              <div onClick={() => deleteRectangle(id)}><DeleteButton /></div>
+              <div onClick={() => showColorPicker(id)}><ChangeColorButton /></div>
 
-            {activePicker === id && (
-              <Sketch
-                className='colorPicker'
-                color={color}
-                onChange={(color) => colorChange(id, color)}
-              />
-            )}
-          </div>
-        ))}
+              {activePicker === id && (
+                <Sketch
+                  className='colorPicker'
+                  color={color}
+                  onChange={(color) => colorChange(id, color)}
+                />
+              )}
+            </div>
+          ))}
 
           {/* Show the add rectangle button */}
           <div className='addRectangle' onClick={addCard}><AddButton /></div>

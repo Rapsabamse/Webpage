@@ -1,9 +1,10 @@
-// POST request to send data to the backend
+// Handles connection with backend to store color card states
+
 import { ColorCard } from '../colorCard/colorCard'
 
+// POST request to send data to the backend
 export async function uploadCardData(card: ColorCard[]) {
     try {
-        console.log(JSON.stringify(card));
         const response = await fetch('http://localhost:8080/upload', {
             method: 'POST',
             headers: {
